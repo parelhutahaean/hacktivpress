@@ -8,40 +8,14 @@ This web app is a simple Content Management System (CMS) or blogging. I use Expr
 
 | Routes | HTTP | Description |
 | --------------- | ------------- | --------------------------- |
-| /food/ | GET | Get all object food |
-| /food/:id | GET | Get object food with id |
-| /food/ | POST | Insert object food |
-| /food/:id | PUT | Update object food by id |
-| /food/:id | DELETE | Delete object food by id |
-| /restaurant/ | GET | Get all object restaurant |
-| /restaurant/:id | GET | Get object restaurant with id |
-| /restaurant/ | POST | Insert object restaurant |
-| /restaurant/:id | PUT | Update object restaurant by id |
-| /restaurant/:id | DELETE | Delete object restaurant by id |
-
-Pada ujian akhir phase kali ini kita akan menguji dan melihat hasil dari pembelajaran yang kita lakukan selama phase 2 ini.
-Kamu akan diminta untuk membuat blogging system sederhana dengan menggunakan framework Express JS, dan juga work database MongoDB dalam waktu 2 jam, serta menggunakan struktur MVC. Tim instruktur akan melakukan penilaian berdasarkan kualitas dan kerapian struktur code, serta workflow selama kamu mengerjakan tugas ini dilihat dari history commit pada repository kalian masing-masing.
-Adapun collection yang perlu kalian buat yaitu collection users yang minimal memiliki field username, dan password.
-Serta collection articles yang minimal memiliki field title, content, category, dan author. Field author merujuk ke data yang ada di field user.
-Dalam blogging sistem ini setiap orang bisa melihat daftar keseluruhan artikel atau daftar artikel berdasar kategori. Namun hanya user yang ter-autentifikasi yang bisa membuat, mengedit, dan menghapus artikel.
-Jangan lupa berdoa sebelum mengerjakan dan good luck!
-SET UP THE REPOSITORY
-Untuk mengerjakan tugas kali ini buatlah sebuah repository dengan nama hacktivpress di akun github kalian masing-masing, kemudian clone pada penyimpanan local di komputer yang kalian gunakan.
-RELEASE 0
-Sebelum memulai coding buatlah sebuah dokumentasi pada file README.md yang menjelaskan berbagai informasi minimal mengenai :
-Deskripsi dari program yang kita buat,
-Langkah-langkah yang perlu dijalankan untuk menjalankan program tersebut,
-Serta daftar API Endpoint yang bisa diakses untuk mengbil data.
-RELEASE 1 API Auth
-Setelah membuat dokumentasi, sekarang waktunya untuk memulai coding. Buatlah model, controller, dan routing untuk operasi user authentication meliputi register dan juga login. Authentikasi bebas menggunakan teknologi apa saja. Facebook login juga boleh
-RELEASE 2 API Articles
-Buatlah model, controller, dan routing untuk operasi CRUD meliputi get all data, get one data, create data, update data, get by author, get by category, dan juga remove data untuk collection articles.
-RELEASE 3 Client Side App
-Buatlah aplikasi client side untuk API yang sudah kita buat sebelumnya, disini kamu bebas menggunakan teknologi apapun seperti jQuery atau VueJS. Pastikan kamu membuat tamplan yang pantas untuk ditampilkan.
-RELEASE 4 Validations
-Jika kamu sudah selesai mengerjakan sampai RELEASE 3, silakan tambahkan validations baik pada server side maupun client-side. validations yang diperlukan antara lain format data yang dimasukkan untuk masing-masing field haruslah sesuai. Dan user hanya bisa edit, dan delete article miliknya sendiri.
-RELEASE 5 Refactor
-
+| /signup/ | POST | Sign up as a new user |
+| /signin/ | POST | Sign in to access the articles |
+| /articles/ | POST | Insert new articles |
+| /articles/ | GET | Get all articles |
+| /articles/:id | GET | Get articles by id |
+| /articles/:user_id | GET | Get articles by author (user) |
+| /articles/:id | DELETE | Delete articles by id |
+| /articles/:id | PUT | Update articles by id |
 
 # Usage:
 
