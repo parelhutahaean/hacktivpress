@@ -41,20 +41,24 @@ methods.insert = (req, res) => {
 
 methods.update = (req, res) => {
   Article.findById(req.params.id, (err, data) => {
+    if (err) res.send(err)
     data.title = req.body.title || data.title
     data.content = req.body.content || data.content
     data.category = req.body.category || data.category
-    data.save(err => {
-      if (err) res.send(err)
+    data.save(err2 => {
+      if (err2) res.send(err2)
       res.send(data)
     })
   })
 }
 
 methods.delete = (req, res) => {
-  Article.deleteById(req.params.id, (err, data) => {
+  Article.findById(req.params.id, (err, data) => {
     if (err) res.send(err)
-    res.send(`Article with id ${data.id} has been deleted`)
+    data.remove(err2 => {
+      if (err2) res.send(err2)
+      res.send(data)
+    })
   })
 }
 
