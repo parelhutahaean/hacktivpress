@@ -13,8 +13,8 @@ This web app is a simple Content Management System (CMS) or blogging. I use Expr
 | /articles/ | POST | Insert new articles |
 | /articles/ | GET | Get all articles |
 | /articles/:id | GET | Get articles by id |
-| /articles/:user_id | GET | Get articles by author (user) |
-| /articles/:category | GET | Get articles by category |
+| /articles/user/:id | GET | Get articles by author (user) |
+| /articles/category/:category | GET | Get articles by category |
 | /articles/:id | DELETE | Delete articles by id |
 | /articles/:id | PUT | Update articles by id |
 
