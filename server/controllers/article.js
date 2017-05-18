@@ -1,4 +1,6 @@
 var Article = require('../models/article')
+var User = require('../models/user')
+var jwt = require('jsonwebtoken');
 
 var methods = {}
 
@@ -30,6 +32,13 @@ methods.getByCategory = (req, res) => {
 }
 
 methods.insert = (req, res) => {
+  jwt.verify(req.headers.token, 'secret', (err, decoded) => {
+    if (decoded) {
+      next()
+    } else {
+      res.send(err)
+    }
+  })
   Article.create(req.body)
   .then(data => {
     res.send(data)

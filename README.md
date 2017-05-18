@@ -10,13 +10,13 @@ This web app is a simple Content Management System (CMS) or blogging. I use Expr
 | --------------- | ------------- | --------------------------- |
 | /signup/ | POST | Sign up as a new user |
 | /signin/ | POST | Sign in to access the articles |
-| /articles/ | POST | Insert new articles |
-| /articles/ | GET | Get all articles |
-| /articles/:id | GET | Get articles by id |
-| /articles/user/:id | GET | Get articles by author (user) |
-| /articles/category/:category | GET | Get articles by category |
-| /articles/:id | DELETE | Delete articles by id |
-| /articles/:id | PUT | Update articles by id |
+| /api/articles/ | POST | Insert new articles |
+| /api/articles/ | GET | Get all articles |
+| /api/articles/:id | GET | Get articles by id |
+| /api/articles/user/:id | GET | Get articles by author (user) |
+| /api/articles/category/:category | GET | Get articles by category |
+| /api/articles/:id | DELETE | Delete articles by id |
+| /api/articles/:id | PUT | Update articles by id |
 
 # Usage:
 

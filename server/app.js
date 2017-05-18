@@ -2,6 +2,7 @@ var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
 var api = require('./routes/api')
+var user = require('./routes/user')
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/hacktivpress-parel');
@@ -16,7 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use('/api', api);
+app.use('/api', api)
+app.use('/', user)
 
 app.listen(3000, () => {
   console.log('App is listening to port 3000');
