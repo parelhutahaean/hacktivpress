@@ -3,12 +3,29 @@ var Article = require('../models/article')
 var methods = {}
 
 methods.getAll = (req, res) => {
-  Article.find()
-  .then(data => {
+  Article.find({}, (err, data) => {
+    if (err) res.send(err)
     res.send(data)
   })
-  .catch(err => {
-    res.send(err)
+}
+
+methods.getById = (req, res) => {
+  Article.findById(req.params.id, (err, data) => {
+    if (err) res.send(err)
+    res.send(data)
+  })
+}
+
+methods.getByUserId = (req, res) => {
+  Article.find({user_id: req.params.id}, (err, data) => {
+    if (err) res.send(err)
+    res.send(data)
+  })
+}
+methods.getByCategory = (req, res) => {
+  Article.find({category: req.params.category}, (err, data) => {
+    if (err) res.send(err)
+    res.send(data)
   })
 }
 
@@ -19,6 +36,25 @@ methods.insert = (req, res) => {
   })
   .catch(err => {
     res.send(err)
+  })
+}
+
+methods.update = (req, res) => {
+  Article.findById(req.params.id, (err, data) => {
+    data.title = req.body.title || data.title
+    data.content = req.body.content || data.content
+    data.category = req.body.category || data.category
+    data.save(err => {
+      if (err) res.send(err)
+      res.send(data)
+    })
+  })
+}
+
+methods.delete = (req, res) => {
+  Article.deleteById(req.params.id, (err, data) => {
+    if (err) res.send(err)
+    res.send(`Article with id ${data.id} has been deleted`)
   })
 }
 
